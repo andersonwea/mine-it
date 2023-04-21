@@ -12,6 +12,11 @@ const Play = () => {
           <img
             className={styles.leftPillar}
             src={leftPillar}
+            alt="pillar esquerdo"
+          />
+          <img
+            className={styles.rightPillar}
+            src={rightPillar}
             alt="pillar direito"
           />
         </div>
