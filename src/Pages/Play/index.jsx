@@ -19,6 +19,16 @@ const Play = () => {
             src={rightPillar}
             alt="pillar direito"
           />
+          <img
+            className={styles.spiderWebLeft}
+            src={spiderWebLeft}
+            alt="teia de aranha esquerda"
+          />
+          <img
+            className={styles.spiderWebRight}
+            src={spiderWebRight}
+            alt="teia de aranha direita"
+          />
         </div>
       </div>
       /
