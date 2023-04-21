@@ -1,0 +1,7 @@
+.cardItem {
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: max-content;
+  margin: auto;
+}

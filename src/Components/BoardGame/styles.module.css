@@ -8,7 +8,7 @@
 .boardGame img:nth-child(2) {
   position: absolute;
   z-index: 2;
-  top: -35px;
+  top: -45px;
   left: 50%;
   translate: -50%;
 }

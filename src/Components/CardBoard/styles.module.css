@@ -2,4 +2,8 @@
   width: 560px;
   height: 560px;
   align-self: center;
+  background: url("../../assets/card-board.svg") no-repeat;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4rem;
 }
