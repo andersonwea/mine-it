@@ -1,0 +1,10 @@
+.startButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  align-self: flex-end;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  bottom: -60px;
+}
