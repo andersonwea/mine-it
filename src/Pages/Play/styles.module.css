@@ -4,6 +4,9 @@
   background: url("../../assets/background.png") no-repeat;
   background-size: cover;
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .app::before {

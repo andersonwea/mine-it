@@ -1,0 +1,14 @@
+.boardGame {
+  height: 700px;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+
+.boardGame img:nth-child(2) {
+  position: absolute;
+  z-index: 2;
+  top: -35px;
+  left: 50%;
+  translate: -50%;
+}

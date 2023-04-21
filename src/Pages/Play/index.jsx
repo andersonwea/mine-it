@@ -3,6 +3,7 @@ import leftPillar from "../../assets/left-pillar.svg";
 import rightPillar from "../../assets/right-pillar.svg";
 import spiderWebLeft from "../../assets/spider-web1.svg";
 import spiderWebRight from "../../assets/spider-web2.svg";
+import BoardGame from "../../Components/BoardGame";
 
 const Play = () => {
   return (
@@ -29,6 +30,7 @@ const Play = () => {
             src={spiderWebRight}
             alt="teia de aranha direita"
           />
+          <BoardGame />
         </div>
       </div>
       /
