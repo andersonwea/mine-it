@@ -1,0 +1,8 @@
+.coinBag {
+  width: 196px;
+  height: 207px;
+  position: absolute;
+  align-self: flex-end;
+  right: -100px;
+  bottom: 20px;
+}

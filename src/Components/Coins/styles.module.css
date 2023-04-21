@@ -1,0 +1,8 @@
+.coins {
+  width: 178px;
+  height: 132px;
+  position: absolute;
+  align-self: flex-end;
+  left: -50px;
+  bottom: 25px;
+}
