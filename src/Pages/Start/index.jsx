@@ -1,6 +1,7 @@
 import styles from "./styles.module.css";
 import Logo from "../../Components/Logo/index";
 import { Link } from "react-router-dom";
+import Play from "../Play/index";
 
 const Start = () => {
   return (
@@ -8,7 +9,7 @@ const Start = () => {
       <div className="containerApp">
         <div className={styles.app}>
           <button className={styles.playButton}>
-            <Link>
+            <Link to="/play" element={<Play />}>
               <Logo />
             </Link>
           </button>
