@@ -3,6 +3,7 @@
   height: 100%;
   background: url("../../assets/background.png") no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .app::before {
@@ -13,4 +14,11 @@
   background: #000;
   position: fixed;
   z-index: -1;
+}
+
+.leftPillar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
 }
