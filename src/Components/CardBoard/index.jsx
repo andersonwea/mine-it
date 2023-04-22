@@ -1,9 +1,12 @@
+import React from "react";
+import { UserContext } from "../../storage/UserContext";
 import CardItem from "./CardItem";
 import styles from "./styles.module.css";
 
 const CardBoard = () => {
   const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const randomCards = takeRandomCard(cards);
+  const { isPlaying } = React.useContext(UserContext);
 
   function takeRandomNumber(InitialNumber, finalNumber) {
     return Math.floor(Math.random() * finalNumber) + InitialNumber;
@@ -22,9 +25,10 @@ const CardBoard = () => {
   }
   return (
     <div className={styles.cardBoard}>
-      {randomCards.map((card, index) => (
-        <CardItem key={index} cardData={card} />
-      ))}
+      {isPlaying &&
+        randomCards.map((card, index) => {
+          return <CardItem key={index} cardData={card} />;
+        })}
     </div>
   );
 };

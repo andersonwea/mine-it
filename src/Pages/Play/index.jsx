@@ -1,11 +1,16 @@
+import React from "react";
 import styles from "./styles.module.css";
 import leftPillar from "../../assets/left-pillar.svg";
 import rightPillar from "../../assets/right-pillar.svg";
 import spiderWebLeft from "../../assets/spider-web1.svg";
 import spiderWebRight from "../../assets/spider-web2.svg";
 import BoardGame from "../../Components/BoardGame";
+import StartButton from "../../Components/StartButton/index";
+import { UserContext } from "../../storage/UserContext";
 
 const Play = () => {
+  const { isPlaying, setIsPlaying } = React.useContext(UserContext);
+
   return (
     <div className="bg">
       <div className="containerApp">
@@ -31,6 +36,7 @@ const Play = () => {
             alt="teia de aranha direita"
           />
           <BoardGame />
+          <StartButton setIsPlaying={setIsPlaying} isPlaying={isPlaying} />
         </div>
       </div>
       /

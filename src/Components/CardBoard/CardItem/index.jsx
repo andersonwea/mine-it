@@ -58,7 +58,6 @@ const CardItem = (props) => {
   function handleClick() {
     setOpen(true);
   }
-  console.log(card);
 
   return (
     <div onClick={handleClick} className={styles.cardItem}>
