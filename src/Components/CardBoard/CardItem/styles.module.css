@@ -1,7 +1,16 @@
-.cardItem {
+.cardItem > button {
   cursor: pointer;
   background: none;
   border: none;
-  width: max-content;
-  margin: auto;
+}
+
+.cardOpened,
+.cardClosed {
+  width: 135px;
+  height: 140px;
+}
+
+.cardOpenedResult {
+  width: 108px;
+  height: 101px;
 }
