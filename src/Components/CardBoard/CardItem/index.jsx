@@ -13,6 +13,7 @@ import diamondPurpleImage from "../../../assets/diamond-purple.svg";
 import diamondRedImage from "../../../assets/diamond-red.svg";
 import diamondYellowImage from "../../../assets/diamond-yellow.svg";
 import bombImage from "../../../assets/bomb.svg";
+import { UserContext } from "../../../storage/UserContext";
 
 const cardItemArray = [
   {
@@ -41,7 +42,10 @@ const diamondItemArray = [
 const CardItem = (props) => {
   const [card, setCard] = React.useState({});
   const [open, setOpen] = React.useState(false);
-  const { itemCard, diamond, bomb } = props.cardData;
+  const { setIsBomb, setIsDiamond } = React.useContext(UserContext);
+  const ref = React.useRef(null);
+  const { cardData } = props;
+  const { itemCard, diamond, bomb } = cardData;
 
   React.useEffect(() => {
     function takeRadomCard() {
@@ -57,6 +61,10 @@ const CardItem = (props) => {
 
   function handleClick() {
     setOpen(true);
+    setTimeout(() => {
+      if (ref.current.alt.includes("bomba")) setIsBomb(true);
+      else setIsDiamond((diamond) => diamond + 1);
+    });
   }
 
   return (
@@ -67,6 +75,7 @@ const CardItem = (props) => {
           style={{ background: `url(${card.back})no-repeat` }}
         >
           <img
+            ref={ref}
             className={styles.cardOpenedResult}
             src={card.bomb ? card.bomb : card.diamond}
             alt={card.bomb ? "imagem de bomba" : "imagem de diamante"}
@@ -82,7 +91,10 @@ const CardItem = (props) => {
   );
 };
 
+CardItem.displayName = "CardItem";
+
 CardItem.propTypes = {
+  props: PropTypes.any,
   cardData: PropTypes.object,
 };
 

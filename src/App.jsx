@@ -11,7 +11,7 @@ function App() {
         <UserStorage>
           <Routes>
             <Route path="/" element={<Start />} />
-            <Route path="/play" element={<Play />} />
+            <Route path="/play/*" element={<Play />} />
           </Routes>
         </UserStorage>
       </BrowserRouter>
