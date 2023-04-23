@@ -45,6 +45,7 @@ const CardItem = (props) => {
   const { setIsBomb, setIsDiamond, isWinnerPlayer, isLoserPlayer } =
     React.useContext(UserContext);
   const ref = React.useRef(null);
+  const flip = React.useRef(null);
   const { cardData } = props;
   const { itemCard, diamond, bomb } = cardData;
 
@@ -60,8 +61,10 @@ const CardItem = (props) => {
     takeRadomCard();
   }, [itemCard, diamond, bomb]);
 
-  function handleClick() {
+  function handleClick({ currentTarget }) {
     setOpen(true);
+    console.log(currentTarget);
+    currentTarget.classList.add("cardOpened");
     setTimeout(() => {
       if (ref.current.alt.includes("bomba")) setIsBomb(true);
       else setIsDiamond((diamond) => diamond + 1);
@@ -71,24 +74,24 @@ const CardItem = (props) => {
 
   return (
     <div onClick={!open ? handleClick : undefined} className={styles.cardItem}>
-      {open ? (
-        <button
-          className={styles.card}
-          style={{ background: `url(${card.back})no-repeat` }}
-        >
-          <img
-            ref={ref}
-            className={styles.cardOpenedResult}
-            src={card.bomb ? card.bomb : card.diamond}
-            alt={card.bomb ? "imagem de bomba" : "imagem de diamante"}
-          />
-        </button>
-      ) : (
-        <button
-          className={styles.card}
-          style={{ background: `url(${card.front})no-repeat` }}
-        ></button>
-      )}
+      <button
+        ref={flip}
+        className={styles.back}
+        style={{ background: `url(${card.back})no-repeat` }}
+      >
+        <img
+          ref={ref}
+          className={styles.cardOpenedResult}
+          src={card.bomb ? card.bomb : card.diamond}
+          alt={card.bomb ? "imagem de bomba" : "imagem de diamante"}
+        />
+      </button>
+      <button
+        ref={flip}
+        className={styles.front}
+        style={{ background: `url(${card.front})no-repeat` }}
+      ></button>
+      )
     </div>
   );
 };

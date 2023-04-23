@@ -1,17 +1,34 @@
-.cardItem > button {
+.cardItem {
+  position: relative;
+  perspective: 1000px;
+}
+
+.cardItem button {
+  position: absolute;
+  backface-visibility: hidden;
   cursor: pointer;
   background: none;
   border: none;
+  transition: transform 0.6s ease;
 }
 
-.card,
-.card {
+.front {
   width: 135px;
   height: 140px;
+  transform: rotateY(0);
+}
+.back {
+  width: 135px;
+  height: 140px;
+  transform: rotateY(-180deg);
 }
 
-.cardOpened {
-  pointer-events: none;
+.cardItem:global(.cardOpened) .front {
+  transform: rotateY(-180deg);
+}
+
+.cardItem:global(.cardOpened) .back {
+  transform: rotateY(0);
 }
 
 .cardOpenedResult {
