@@ -5,6 +5,8 @@
 
 .cardItem button {
   position: absolute;
+  left: 50%;
+  translate: -50%;
   backface-visibility: hidden;
   cursor: pointer;
   background: none;
@@ -20,11 +22,11 @@
 .back {
   width: 135px;
   height: 140px;
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
 }
 
 .cardItem:global(.cardOpened) .front {
-  transform: rotateY(-180deg);
+  transform: rotateY(180deg);
 }
 
 .cardItem:global(.cardOpened) .back {

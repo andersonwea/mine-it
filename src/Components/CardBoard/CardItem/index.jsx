@@ -63,14 +63,12 @@ const CardItem = (props) => {
 
   function handleClick({ currentTarget }) {
     setOpen(true);
-    console.log(currentTarget);
     currentTarget.classList.add("cardOpened");
     setTimeout(() => {
       if (ref.current.alt.includes("bomba")) setIsBomb(true);
       else setIsDiamond((diamond) => diamond + 1);
     });
   }
-  if (isWinnerPlayer || isLoserPlayer) console.log("fim de jogo");
 
   return (
     <div onClick={!open ? handleClick : undefined} className={styles.cardItem}>
@@ -91,7 +89,6 @@ const CardItem = (props) => {
         className={styles.front}
         style={{ background: `url(${card.front})no-repeat` }}
       ></button>
-      )
     </div>
   );
 };
