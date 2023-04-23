@@ -38,12 +38,13 @@ const diamondItemArray = [
   diamondRedImage,
   diamondYellowImage,
 ];
+const bombAudio = new Audio("../src/assets/sounds/mine-it-dinamite.mp3");
+const diamondAudio = new Audio("../src/assets/sounds/mine-it-right.mp3");
 
 const CardItem = (props) => {
   const [card, setCard] = React.useState({});
   const [open, setOpen] = React.useState(false);
-  const { setIsBomb, setIsDiamond, isWinnerPlayer, isLoserPlayer } =
-    React.useContext(UserContext);
+  const { setIsBomb, setIsDiamond } = React.useContext(UserContext);
   const ref = React.useRef(null);
   const flip = React.useRef(null);
   const { cardData } = props;
@@ -65,8 +66,13 @@ const CardItem = (props) => {
     setOpen(true);
     currentTarget.classList.add("cardOpened");
     setTimeout(() => {
-      if (ref.current.alt.includes("bomba")) setIsBomb(true);
-      else setIsDiamond((diamond) => diamond + 1);
+      if (ref.current.alt.includes("bomba")) {
+        setIsBomb(true);
+        bombAudio.play();
+      } else {
+        setIsDiamond((diamond) => diamond + 1);
+        diamondAudio.play();
+      }
     });
   }
 
