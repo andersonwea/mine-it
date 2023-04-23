@@ -23,18 +23,32 @@ const UserStorage = ({ children }) => {
   }, [isDiamond, isBomb]);
 
   React.useEffect(() => {
-    if (isWinnerPlayer) navigate("/play/winner");
-
-    if (isLoserPlayer) navigate("/play/loser");
+    if (isWinnerPlayer || isLoserPlayer) {
+      setTimeout(() => {
+        navigate("/play/gameover");
+      }, 1000);
+    }
+    console.log({
+      winner: isWinnerPlayer,
+      loser: isLoserPlayer,
+    });
   }, [isWinnerPlayer, isLoserPlayer, navigate]);
+
+  console.log({
+    diamond: isDiamond,
+    bomb: isBomb,
+  });
 
   return (
     <UserContext.Provider
       value={{
         isPlaying,
+        isWinnerPlayer,
         setIsPlaying,
         setIsDiamond,
         setIsBomb,
+        setIsWinnerPlayer,
+        setIsLoserPlayer,
       }}
     >
       {children}

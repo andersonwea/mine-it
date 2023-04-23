@@ -1,13 +1,11 @@
-import React from "react";
 import styles from "./styles.module.css";
 import leftPillar from "../../assets/left-pillar.svg";
 import rightPillar from "../../assets/right-pillar.svg";
 import spiderWebLeft from "../../assets/spider-web1.svg";
 import spiderWebRight from "../../assets/spider-web2.svg";
 import BoardGame from "../../Components/BoardGame";
-import WinnerPlayer from "../WinnerPlayer/WinnerPlayer";
-import LoserPlayer from "../LoserPlayer/LoserPlayer";
 import { Routes, Route } from "react-router-dom";
+import GameOver from "../GameOver/index";
 
 const Play = () => {
   return (
@@ -36,8 +34,7 @@ const Play = () => {
           />
           <Routes>
             <Route path="/" element={<BoardGame />} />
-            <Route path="/winner" element={<WinnerPlayer />} />
-            <Route path="/loser" element={<LoserPlayer />} />
+            <Route path="/gameover" element={<GameOver />} />
           </Routes>
         </div>
       </div>
