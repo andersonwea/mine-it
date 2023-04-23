@@ -16,18 +16,17 @@ const UserStorage = ({ children }) => {
   React.useEffect(() => {
     if (isDiamond === 8) {
       setIsWinnerPlayer(true);
-      navigate("/play/winner");
     }
     if (isBomb) {
       setIsLoserPlayer(true);
-      navigate("/play/loser");
     }
+  }, [isDiamond, isBomb]);
 
-    console.log({
-      diamonds: isDiamond,
-      bomb: isBomb,
-    });
-  }, [isDiamond, isBomb, navigate]);
+  React.useEffect(() => {
+    if (isWinnerPlayer) navigate("/play/winner");
+
+    if (isLoserPlayer) navigate("/play/loser");
+  }, [isWinnerPlayer, isLoserPlayer, navigate]);
 
   return (
     <UserContext.Provider
