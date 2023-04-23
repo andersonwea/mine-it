@@ -4,10 +4,14 @@
   border: none;
 }
 
-.cardOpened,
-.cardClosed {
+.card,
+.card {
   width: 135px;
   height: 140px;
+}
+
+.cardOpened {
+  pointer-events: none;
 }
 
 .cardOpenedResult {

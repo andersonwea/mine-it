@@ -42,7 +42,8 @@ const diamondItemArray = [
 const CardItem = (props) => {
   const [card, setCard] = React.useState({});
   const [open, setOpen] = React.useState(false);
-  const { setIsBomb, setIsDiamond } = React.useContext(UserContext);
+  const { setIsBomb, setIsDiamond, isWinnerPlayer, isLoserPlayer } =
+    React.useContext(UserContext);
   const ref = React.useRef(null);
   const { cardData } = props;
   const { itemCard, diamond, bomb } = cardData;
@@ -66,12 +67,13 @@ const CardItem = (props) => {
       else setIsDiamond((diamond) => diamond + 1);
     });
   }
+  if (isWinnerPlayer || isLoserPlayer) console.log("fim de jogo");
 
   return (
-    <div onClick={handleClick} className={styles.cardItem}>
+    <div onClick={!open ? handleClick : undefined} className={styles.cardItem}>
       {open ? (
         <button
-          className={styles.cardOpened}
+          className={styles.card}
           style={{ background: `url(${card.back})no-repeat` }}
         >
           <img
@@ -83,7 +85,7 @@ const CardItem = (props) => {
         </button>
       ) : (
         <button
-          className={styles.cardClosed}
+          className={styles.card}
           style={{ background: `url(${card.front})no-repeat` }}
         ></button>
       )}
