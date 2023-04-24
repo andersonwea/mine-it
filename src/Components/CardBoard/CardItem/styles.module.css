@@ -5,6 +5,19 @@
   height: 140px;
   left: 50%;
   translate: -50%;
+  animation: apearAnime 0.25s ease forwards;
+  opacity: 0;
+}
+
+@keyframes apearAnime {
+  0% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: initial;
+  }
 }
 
 .cardItem button {
@@ -52,5 +65,17 @@
   .cardItem img {
     width: 80px;
     height: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardItem {
+    width: 82px;
+    height: 82px;
+  }
+
+  .cardItem img {
+    width: 70px;
+    height: 70px;
   }
 }

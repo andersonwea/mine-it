@@ -31,7 +31,14 @@ const CardBoard = () => {
     <div className={styles.cardBoard}>
       {isPlaying &&
         randomCards.map((card, index) => {
-          return <CardItem open={open} key={index} cardData={card} />;
+          return (
+            <CardItem
+              open={open}
+              key={index}
+              cardData={card}
+              styleAnimation={{ animationDelay: `${index * 250}ms` }}
+            />
+          );
         })}
       <StartButton setIsPlaying={setIsPlaying} isPlaying={isPlaying} />
     </div>

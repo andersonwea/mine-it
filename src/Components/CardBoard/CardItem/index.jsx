@@ -41,13 +41,12 @@ const diamondItemArray = [
 const bombAudio = new Audio("../src/assets/sounds/mine-it-dinamite.mp3");
 const diamondAudio = new Audio("../src/assets/sounds/mine-it-right.mp3");
 
-const CardItem = (props) => {
+const CardItem = ({ cardData, styleAnimation }) => {
   const [card, setCard] = React.useState({});
   const [open, setOpen] = React.useState(false);
   const { setIsBomb, setIsDiamond } = React.useContext(UserContext);
   const ref = React.useRef(null);
   const flip = React.useRef(null);
-  const { cardData } = props;
   const { itemCard, diamond, bomb } = cardData;
 
   React.useEffect(() => {
@@ -77,9 +76,13 @@ const CardItem = (props) => {
       }
     });
   }
-
+  console.log(styleAnimation);
   return (
-    <div onClick={!open ? handleClick : undefined} className={styles.cardItem}>
+    <div
+      onClick={!open ? handleClick : undefined}
+      className={styles.cardItem}
+      style={styleAnimation}
+    >
       <button
         ref={flip}
         className={styles.back}
@@ -108,7 +111,7 @@ const CardItem = (props) => {
 CardItem.displayName = "CardItem";
 
 CardItem.propTypes = {
-  props: PropTypes.any,
+  styleAnimation: PropTypes.object,
   cardData: PropTypes.object,
 };
 

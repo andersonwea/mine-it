@@ -72,7 +72,8 @@
     width: 216px;
   }
   .rightPillar {
-    width: 350px;
+    width: 300px;
+    bottom: -450px;
   }
 }
 
