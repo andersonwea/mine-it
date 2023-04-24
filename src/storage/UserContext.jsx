@@ -37,16 +37,7 @@ const UserStorage = ({ children }) => {
         navigate("/play/gameover");
       }, 1000);
     }
-    console.log({
-      winner: isWinnerPlayer,
-      loser: isLoserPlayer,
-    });
   }, [isWinnerPlayer, isLoserPlayer, navigate]);
-
-  console.log({
-    diamond: isDiamond,
-    bomb: isBomb,
-  });
 
   return (
     <UserContext.Provider

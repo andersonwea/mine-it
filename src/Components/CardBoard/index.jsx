@@ -16,7 +16,6 @@ const CardBoard = () => {
     const takeRandomBombPosition = takeRandomNumber(1, 9);
     return cards.map((card) => {
       const takeRandomCardItem = takeRandomNumber(0, 4);
-      console.log(takeRandomBombPosition);
       return {
         itemCard: takeRandomCardItem,
         diamond: takeRandomNumber(0, 3),
@@ -26,7 +25,6 @@ const CardBoard = () => {
   }, []);
 
   const randomCards = takeRandomCard;
-  console.log(randomCards);
   return (
     <div className={styles.cardBoard}>
       {isPlaying &&

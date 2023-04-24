@@ -76,7 +76,6 @@ const CardItem = ({ cardData, styleAnimation }) => {
       }
     });
   }
-  console.log(styleAnimation);
   return (
     <div
       onClick={!open ? handleClick : undefined}

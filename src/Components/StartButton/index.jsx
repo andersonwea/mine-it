@@ -1,5 +1,5 @@
 import styles from "./styles.module.css";
-import startButton from "../../assets/start.svg";
+import startButton from "../../assets/start.png";
 import PropTypes from "prop-types";
 
 const StartButton = ({ setIsPlaying, isPlaying }) => {
