@@ -64,6 +64,8 @@ const CardItem = (props) => {
 
   function handleClick({ currentTarget }) {
     setOpen(true);
+    diamondAudio.pause();
+    diamondAudio.currentTime = 0;
     currentTarget.classList.add("cardOpened");
     setTimeout(() => {
       if (ref.current.alt.includes("bomba")) {
