@@ -1,5 +1,4 @@
 .playAgain {
-  background: url("../../assets/play-again.svg");
   width: 345px;
   height: 105px;
   display: block;
@@ -9,12 +8,35 @@
   cursor: pointer;
   z-index: 3;
   position: relative;
+  background: none;
 }
 
-.winner {
-  background: url("../../assets/play-again.svg");
+.gameOver {
+  display: grid;
 }
 
-.loser {
-  background: url("../../assets/try-again.svg");
+@media (max-width: 800px) {
+  .playAgain {
+    margin-top: 30px;
+  }
+  .playAgain img {
+    width: 216px;
+  }
+  .gameOverImage {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .playAgain {
+    margin-top: 20px;
+  }
+  .playAgain img {
+    width: 180px;
+  }
+  .gameOverImage {
+    width: 240px;
+    margin: 0 auto;
+  }
 }

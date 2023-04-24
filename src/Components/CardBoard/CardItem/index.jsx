@@ -81,7 +81,9 @@ const CardItem = (props) => {
       <button
         ref={flip}
         className={styles.back}
-        style={{ background: `url(${card.back})no-repeat` }}
+        style={{
+          backgroundImage: `url(${card.back})`,
+        }}
       >
         <img
           ref={ref}
@@ -93,7 +95,9 @@ const CardItem = (props) => {
       <button
         ref={flip}
         className={styles.front}
-        style={{ background: `url(${card.front})no-repeat` }}
+        style={{
+          backgroundImage: `url(${card.front})`,
+        }}
       ></button>
     </div>
   );

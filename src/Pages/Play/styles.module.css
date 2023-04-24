@@ -44,3 +44,46 @@
   right: 0;
   top: 0;
 }
+
+@media (max-width: 1080px) {
+  .leftPillar {
+    display: none;
+  }
+
+  .app {
+    position: relative;
+  }
+
+  .rightPillar {
+    transform: rotate(90deg);
+    height: initial;
+    bottom: -300px;
+    right: initial;
+    top: initial;
+    left: initial;
+  }
+}
+
+@media (max-width: 800px) {
+  .spiderWebLeft {
+    width: 116px;
+  }
+  .spiderWebRight {
+    width: 216px;
+  }
+  .rightPillar {
+    width: 350px;
+  }
+}
+
+@media (max-width: 400px) {
+  .spiderWebLeft {
+    width: 88px;
+  }
+  .spiderWebRight {
+    width: 200px;
+  }
+  .rightPillar {
+    width: 315px;
+  }
+}

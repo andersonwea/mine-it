@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import loserImage from "../../assets/GAME-OVER.svg";
 import winnerImage from "../../assets/YOU-WIN.svg";
+import playAgainButton from "../../assets/play-again.svg";
+import tryAgainButton from "../../assets/try-again.svg";
 import styles from "./styles.module.css";
 import { UserContext } from "../../storage/UserContext";
 
@@ -24,22 +26,28 @@ const GameOver = () => {
   }
 
   return (
-    <div>
+    <div className={styles.gameOver}>
       {isWinnerPlayer ? (
         <>
-          <img src={winnerImage} alt="Você ganhou" />
-          <button
-            onClick={handleClick}
-            className={`${styles.playAgain} ${styles.winner}`}
+          <img
+            className={styles.gameOverImage}
+            src={winnerImage}
+            alt="Você ganhou"
           />
+          <button onClick={handleClick} className={`${styles.playAgain}`}>
+            <img src={playAgainButton} alt="jogue de novo" />
+          </button>
         </>
       ) : (
         <>
-          <img src={loserImage} alt="Você perdeu" />
-          <button
-            onClick={handleClick}
-            className={`${styles.playAgain} ${styles.loser}`}
-          ></button>
+          <img
+            className={styles.gameOverImage}
+            src={loserImage}
+            alt="Você perdeu"
+          />
+          <button onClick={handleClick} className={`${styles.playAgain}`}>
+            <img src={tryAgainButton} alt="tente de novo" />
+          </button>
         </>
       )}
     </div>

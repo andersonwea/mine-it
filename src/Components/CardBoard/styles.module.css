@@ -5,5 +5,23 @@
   background: url("../../assets/card-board.svg") no-repeat;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 4rem;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .cardBoard {
+    width: 350px;
+    height: 350px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .cardBoard {
+    width: 320px;
+    height: 320px;
+    padding: 10px;
+  }
 }
