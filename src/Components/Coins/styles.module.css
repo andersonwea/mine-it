@@ -4,7 +4,7 @@
   position: absolute;
   align-self: flex-end;
   left: -80px;
-  bottom: 25px;
+  bottom: 30px;
 }
 
 @media (max-width: 800px) {

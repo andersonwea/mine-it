@@ -1,6 +1,6 @@
 .cardBoard {
-  width: 560px;
-  height: 560px;
+  width: 540px;
+  height: 540px;
   align-self: center;
   background: url("../../assets/card-board.svg") no-repeat;
   display: grid;
