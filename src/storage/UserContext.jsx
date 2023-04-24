@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 const UserContext = React.createContext();
-const playAudio = new Audio("src/assets/sounds/mine-it-background-music.mp3");
+const playAudio = new Audio("./src/assets/mine-it-background-music.mp3");
 
 const UserStorage = ({ children }) => {
   const [isPlaying, setIsPlaying] = React.useState(false);
@@ -34,7 +34,7 @@ const UserStorage = ({ children }) => {
     if (isWinnerPlayer || isLoserPlayer) {
       setTimeout(() => {
         setIsPlaying(false);
-        navigate("/play/gameover");
+        navigate("/mine-it/play/gameover");
       }, 1000);
     }
   }, [isWinnerPlayer, isLoserPlayer, navigate]);

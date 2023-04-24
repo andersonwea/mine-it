@@ -25,7 +25,7 @@ const GameOver = () => {
     setIsDiamond(0);
     setIsLoserPlayer(false);
     setIsWinnerPlayer(false);
-    navigate("/play");
+    navigate("/mine-it/play");
   }
 
   return (

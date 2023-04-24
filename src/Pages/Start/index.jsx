@@ -9,7 +9,7 @@ const Start = () => {
       <div className="containerApp">
         <div className={styles.app}>
           <button className={styles.playButton}>
-            <Link to="/play" element={<Play />}>
+            <Link to="/mine-it/play" element={<Play />}>
               <Logo />
             </Link>
           </button>

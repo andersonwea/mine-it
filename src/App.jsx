@@ -9,8 +9,8 @@ function App() {
       <BrowserRouter>
         <UserStorage>
           <Routes>
-            <Route path="/" element={<Start />} />
-            <Route path="/play/*" element={<Play />} />
+            <Route exact={true} path="/mine-it" element={<Start />} />
+            <Route path="/mine-it/play/*" element={<Play />} />
           </Routes>
         </UserStorage>
       </BrowserRouter>

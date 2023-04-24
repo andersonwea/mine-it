@@ -38,8 +38,8 @@ const diamondItemArray = [
   diamondRedImage,
   diamondYellowImage,
 ];
-const bombAudio = new Audio("../src/assets/sounds/mine-it-dinamite.mp3");
-const diamondAudio = new Audio("../src/assets/sounds/mine-it-right.mp3");
+const bombAudio = new Audio("./src/assets/mine-it-dinamite.mp3");
+const diamondAudio = new Audio("./src/assets/mine-it-right.mp3");
 
 const CardItem = ({ cardData, styleAnimation }) => {
   const [card, setCard] = React.useState({});
