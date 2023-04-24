@@ -6,8 +6,11 @@ import playAgainButton from "../../assets/play-again.svg";
 import tryAgainButton from "../../assets/try-again.svg";
 import styles from "./styles.module.css";
 import { UserContext } from "../../storage/UserContext";
+import { useWindowSize } from "react-use";
+import Confetti from "react-confetti";
 
 const GameOver = () => {
+  const { width, height } = useWindowSize();
   const {
     setIsBomb,
     setIsDiamond,
@@ -29,6 +32,7 @@ const GameOver = () => {
     <div className={styles.gameOver}>
       {isWinnerPlayer ? (
         <>
+          <Confetti width={width} height={height} tweenDuration={2000} />
           <img
             className={styles.gameOverImage}
             src={winnerImage}
