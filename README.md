@@ -5,6 +5,8 @@
 ## Projeto
 O Mine-It é um jogo simples onde o objetivo é encontrar os 8 diamantes sem encontrar a bomba. O jogo é jogado em um tabuleiro de 9x9 quadrados, e cada quadrado é uma mina que pode conter um diamante ou uma bomba.
 
+### Confira o projeto nesse [Link](https://andersonwea.github.io/mine-it/)
+
 ## Como jogar
 O jogo começa com o jogador escolhendo um quadrado para cavar. Se o quadrado contiver um diamante, o jogador continua a cavar até encontrar os outros sete diamantes. Se o quadrado contiver uma bomba, o jogo termina imediatamente.
 
